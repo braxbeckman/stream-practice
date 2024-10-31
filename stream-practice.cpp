@@ -26,14 +26,21 @@ int main()
         string tmpNum{};
         int iterator{};
         iterator = line.find_last_of('\t');
-        while(line[iterator] != '\n')
+        iterator++;
+        while(iterator != (line.size()))
         {
-            tmpNum += line[iterator];
+            if (isdigit(line[iterator]))
+            {
+                tmpNum += line[iterator];
+            }
+
+            iterator++;
         }
-        cout << tmpNum << endl;
+        cout << tmpNum << " size is: " << tmpNum.size() << endl;
+        int newNum = static_cast<int>(tmpNum);
 
     }
-
+    cout << endl << "total is: " << total << endl;
     cout << numOfC << endl;
 
     input.close();
